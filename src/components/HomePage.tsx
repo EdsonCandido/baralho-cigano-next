@@ -1,4 +1,3 @@
-"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -8,9 +7,9 @@ export default function HomePage() {
   const [nome, setNome] = useState("");
   const router = useRouter();
 
-  const handleContinuar = () => {
+  const handleComeçarJogo = () => {
     if (nome.trim()) {
-      router.push(`/jogo/selecao-tiragem?nome=${nome}`);
+      router.push(`/jogo?nome=${nome}`);
     } else {
       alert("Por favor, digite seu nome.");
     }
@@ -35,11 +34,11 @@ export default function HomePage() {
             onChange={(e) => setNome(e.target.value)}
           />
         </div>
-        <Button className="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleContinuar}>
-          Continuar
+        <Button className="w-full bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" onClick={handleComeçarJogo}>
+          Começar a Jogar
         </Button>
         <p className="text-center text-gray-500 text-xs mt-4">
-          Prepare-se para desvendar os mistérios!
+          Que as cartas revelem seu caminho!
         </p>
       </div>
     </div>
