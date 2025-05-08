@@ -2,30 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter, useSearchParams } from "next/navigation";
-
-// Defina a interface para uma carta (se ainda não estiver definida)
-interface Carta {
-  nome: string;
-  imagem: string; // Caminho para a imagem da carta
-  significado: string;
-}
-
-// Importe a função para criar o baralho (se já não estiver no mesmo arquivo)
-const criarBaralho = (): Carta[] => {
-  return [
-    { nome: "O Cavaleiro", imagem: "/assets/cavaleiro.png", significado: "Movimento, notícias, progresso." },
-    { nome: "O Trevo", imagem: "/assets/trevo.png", significado: "Pequenos desafios, sorte passageira." },
-    { nome: "O Navio", imagem: "/assets/navio.png", significado: "Viagem, mudanças, oportunidades." },
-    { nome: "A Casa", imagem: "/assets/casa.png", significado: "Lar, segurança, família." },
-    { nome: "A Árvore", imagem: "/assets/arvore.png", significado: "Crescimento, saúde, vitalidade." },
-    { nome: "As Nuvens", imagem: "/assets/nuvens.png", significado: "Confusão, incerteza, obscuridade." },
-    { nome: "A Serpente", imagem: "/assets/serpente.png", significado: "Traição, inveja, astúcia." },
-    { nome: "O Caixão", imagem: "/assets/caixao.png", significado: "Fim de ciclo, transformação, perda." },
-    { nome: "O Buquê", imagem: "/assets/buque.png", significado: "Felicidade, alegria, presente." },
-    { nome: "A Foice", imagem: "/assets/foice.png", significado: "Corte, separação, decisão." },
-    // ... Adicione as outras 26 cartas aqui com seus nomes, caminhos de imagem e significados
-  ];
-};
+import { criarBaralho } from "@/lib/utils";
 
 const embaralhar = (baralho: Carta[]): Carta[] => {
   return [...baralho].sort(() => Math.random() - 0.5);
