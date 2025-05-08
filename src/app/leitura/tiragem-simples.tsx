@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useRouter, useSearchParams } from "next/navigation";
 import { criarBaralho } from "@/lib/utils";
+import { Carta } from "@/types/Carta";
 
 const embaralhar = (baralho: Carta[]): Carta[] => {
   return [...baralho].sort(() => Math.random() - 0.5);
